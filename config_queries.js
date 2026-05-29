@@ -64,5 +64,22 @@ const SQL_QUERIES = {
         
         // consultation des articles
         consultations_par_article: "SELECT a.titre AS article, SUM(c.nbr_consultations) AS nb FROM a_consulte c JOIN articles a ON c.article_id = a.id GROUP BY a.titre ORDER BY nb DESC"
+    },
+
+    // --- VUE COMPLEXE (Historique) ---
+    historique: {
+        vue_globale: `
+            SELECT 
+                u.pseudo AS Lecteur, 
+                u.pays AS Pays,
+                a.titre AS Article, 
+                r.nom_rubrique AS Rubrique, 
+                c.nbr_consultations AS Vues
+            FROM a_consulte c 
+            JOIN utilisateur u ON c.utilisateur_id = u.id 
+            JOIN articles a ON c.article_id = a.id
+            JOIN rubrique r ON a.rubrique_id = r.id
+            ORDER BY c.nbr_consultations DESC
+        `
     }
 };

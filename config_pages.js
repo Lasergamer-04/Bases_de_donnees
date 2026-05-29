@@ -20,14 +20,14 @@ const PAGES_CONFIG = {
         table_name: "edition",
         query: SQL_QUERIES.editions.list_all,
         delete_query: SQL_QUERIES.editions.delete,
-        // Tu pourras créer form_edition.html plus tard
+        form_page_url: "form_edition.html"
     }, 
     "consultations_liste": {
         title: "Gestion des Consultations",
         table_name: "a_consulte",
         query: SQL_QUERIES.a_consulte.list_all,
         delete_query: SQL_QUERIES.a_consulte.delete,
-        // Tu pourras créer form_consultation.html plus tard
+        form_page_url: "form_consultation.html"
     },
     
     // --- VUES AVEC JOINTURES ---
@@ -96,5 +96,35 @@ const PAGES_CONFIG = {
         query_get_one: SQL_QUERIES.auteurs.get_one,
         query_insert: SQL_QUERIES.auteurs.insert,
         query_update: SQL_QUERIES.auteurs.update
+    },
+    "formulaire_edition": {
+        title: "Édition",
+        table_name: "editions",
+        fields: [
+            { name: "nom", label: "Nom de l'édition (ex: Édition Spéciale)", type: "text" }
+        ],
+        query_get_one: SQL_QUERIES.editions.get_one,
+        query_insert: SQL_QUERIES.editions.insert,
+        query_update: SQL_QUERIES.editions.update
+    },
+    "formulaire_consultation": {
+        title: "Consultation",
+        table_name: "a_consulte",
+        fields: [
+            // Utilisation du type "select" pour générer automatiquement des listes déroulantes dynamiques !
+            { name: "utilisateur_id", label: "Lecteur / Utilisateur", type: "select", query_options: "SELECT id AS option_value, pseudo AS option_text FROM utilisateur" },
+            { name: "article_id", label: "Article consulté", type: "select", query_options: "SELECT id AS option_value, titre AS option_text FROM articles" },
+            { name: "nbr_consultations", label: "Nombre de consultations", type: "number" },
+            { name: "tps_moyen", label: "Temps moyen passé (en secondes)", type: "number" }
+        ],
+        query_get_one: SQL_QUERIES.a_consulte.get_one,
+        query_insert: SQL_QUERIES.a_consulte.insert,
+        query_update: SQL_QUERIES.a_consulte.update
+    },
+
+    // --- VUE HISTORIQUE ---
+    "vue_historique": {
+        title: "Historique Complet des Consultations",
+        query: SQL_QUERIES.historique.vue_globale
     }
 };
