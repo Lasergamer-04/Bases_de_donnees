@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulaire</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/alasql@4"></script>
+    <script src="config_app.js"></script>
+    <script src="config_queries.js"></script>
+    <script src="config_pages.js"></script>
+    <script src="app_engine.js"></script>
+</head>
+<body>
+    <aside></aside>
+    <main>
+        <article>
+            <header><h2 id="formTitle">...</h2></header>
+            <form id="dynamicForm">
+                <div id="fieldsContainer"></div>
+                <button type="submit">💾 Enregistrer</button>
+                <button type="button" class="secondary outline" onclick="window.history.back()">Annuler</button>
+            </form>
+        </article>
+    </main>
+
+    <script>
+        // ✏️ ZONE ÉTUDIANT : 
+        // 1. Dupliquez ce fichier et renommez-le (ex: membres_form.html)
+        // 2. Changez l'ID ci-dessous pour qu'il corresponde à celui dans config.js
+        const PAGE_ID = "formulaire_emprunts";
+
+        // Ne pas toucher à la ligne ci-dessous, elle lance le chargement automatique.
+        window.onload = () => chargerFormulaire(PAGE_ID);
+    </script>
+</body>
+</html>

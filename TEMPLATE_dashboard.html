@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Statistiques</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/alasql@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="config_app.js"></script>
+    <script src="config_queries.js"></script>
+    <script src="config_pages.js"></script>
+    <script src="app_engine.js"></script>
+</head>
+<body>
+    <aside></aside>
+    <main>
+        <h2 id="pageTitle">...</h2>
+        <div id="chartsContainer" class="grid-charts">
+            <!-- Les graphiques seront injectés ici -->
+        </div>
+    </main>
+
+    <script>
+        // ✏️ ZONE ÉTUDIANT : 
+        // 1. Dupliquez ce fichier et renommez-le (ex: mes_stats.html)
+        // 2. Changez l'ID ci-dessous pour qu'il corresponde à celui dans config.js
+        const PAGE_ID = "stats_dashboard";
+
+        // Ne pas toucher à la ligne ci-dessous, elle lance le chargement automatique.
+        window.onload = () => chargerStats(PAGE_ID);
+    </script>
+</body>
+</html>
