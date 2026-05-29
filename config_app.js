@@ -17,6 +17,7 @@ const APP_CONFIG = {
         { label: "📊 Statistique de Langue", url: "stats_langue.html" },
         { label: "📊 Statistique des Auteurs", url: "stats_auteurs.html" },
         { label: "📊 Statistique des Consultations", url: "stats_consultations.html" },
-        { label: "📜 Historique complet", url: "TEMPLATE_vue_complexe.html" }
+        { label: "📜 Historique complet", url: "TEMPLATE_vue_complexe.html" },
+        { label: "⚙️ Paramètres", url: "parametres.html" }
     ]
 };
