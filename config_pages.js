@@ -36,12 +36,14 @@ const PAGES_CONFIG = {
         table_name: "article",
         query: SQL_QUERIES.articles.list_with_names,
         delete_query: SQL_QUERIES.articles.delete,
+        form_page_url: "form_jointure_article.html"
     }, 
     "consultations_liste_join": {
         title: "Consultations (Vue détaillée)",
         table_name: "a_consulte",
         query: SQL_QUERIES.a_consulte.list_with_names,
         delete_query: SQL_QUERIES.a_consulte.delete,
+        form_page_url: "form_jointure_consultation.html"
     },
 
     // --- PAGES DE TYPE "STATISTIQUES" (Graphiques) ---
