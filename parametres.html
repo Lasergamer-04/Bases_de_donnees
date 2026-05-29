@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>France 24</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/alasql@4"></script>
+    <script src="init_db.js"></script> <script src="config_app.js"></script>
+    <script src="config_queries.js"></script>
+    <script src="config_pages.js"></script>
+    <script src="app_engine.js"></script>
+</head>
+<body>
+<aside></aside>
+<main>
+    <header><h1 id="page-title">⚙️ Paramètres</h1></header>
+
+    <article>
+        <h2>Statut de la Base de Données</h2>
+        <p id="msg">Vérification en cours...</p>
+        <p>Ce menu vous permet de réinitialiser l'environnement de TP à son état d'origine.</p>
+        <footer>
+            <button class="secondary outline" onclick="reinitialiserBase()">🔄 Réinitialiser la Base (Wipe)</button>
+        </footer>
+    </article>
+
+    <article>
+        <h2>Sauvegarde et Restauration de la Base de Données</h2>
+        <p>Sauvegardez votre base de données actuelle ou restaurez-la à partir d'un fichier.</p>
+        <footer>
+<!--            <button onclick="sauvegarderBaseDeDonnees()">💾 Sauvegarder la Base de Données</button>-->
+<!--            <input type="file" id="restoreFileInput" accept=".json" style="display: none;" onchange="chargerBaseDeDonneesDepuisFichier(event)">-->
+<!--            <button onclick="document.getElementById('restoreFileInput').click()">📤 Restaurer la Base de Données</button>-->
+            <button class="secondary" onclick="exporterSQLPourInit()">📄 Exporter SQL pour init_db.js</button>
+        </footer>
+    </article>
+
+    <article id="tablesDetail">
+        <h3>Structure des Tables</h3>
+        <div id="tablesContainer">Chargement du schéma...</div>
+    </article>
+</main>
+
+<script>
+    window.onload = chargerParametres;
+</script>
+</body>
+</html>

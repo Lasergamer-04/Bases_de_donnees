@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>France 24</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/alasql@4"></script>
+    <script src="init_db.js"></script> <script src="config_app.js"></script>
+    <script src="config_queries.js"></script>
+    <script src="config_pages.js"></script>
+    <script src="app_engine.js"></script>
+</head>
+<body>
+<aside></aside>
+<main>
+    <section class="hero-banner">
+        <h1 id="banner-title">🚀 France 24 - Back-Office</h1>
+        <p>Gérez vos articles, vos auteurs et analysez les consultations en temps réel.</p>
+    </section>
+
+    <nav role="tablist">
+        <button role="tab" aria-selected="true" aria-controls="tab-bienvenue">👋 Bienvenue</button>
+        <button role="tab" aria-selected="false" aria-controls="tab-guide">📖 Guide d'utilisation</button>
+    </nav>
+
+    <article id="tab-bienvenue" role="tabpanel">
+        <h2>Tableau de bord - Revue de Presse 🌍</h2>
+        <p>Bienvenue sur l'outil de gestion interne. Utilisez le menu latéral pour naviguer entre les différentes sections de la base de données.</p>
+
+        <div class="grid">
+            <div class="mission-step">
+                <h5>📝 Édition</h5>
+                <p><small>Ajoutez, modifiez ou supprimez des articles et des auteurs directement depuis les pages de gestion.</small></p>
+            </div>
+            <div class="mission-step">
+                <h5>🔗 Jointures</h5>
+                <p><small>Consultez les vues croisées pour voir le nom des auteurs ou des rubriques associés aux articles.</small></p>
+            </div>
+            <div class="mission-step">
+                <h5>📊 Statistiques</h5>
+                <p><small>Visualisez les performances du journal : consultations par lecteur, articles par langue, etc.</small></p>
+            </div>
+        </div>
+    </article>
+
+    <article id="tab-guide" role="tabpanel" hidden>
+        <h2>Comment utiliser cet outil ?</h2>
+        <div class="mission-card">
+            <div class="step">
+                <span class="step-title">1. Menu Latéral</span>
+                <p>Le menu à gauche vous permet d'accéder à toutes les listes et tous les graphiques.</p>
+            </div>
+            <div class="step">
+                <span class="step-title">2. Problème d'affichage ?</span>
+                <p>Si la base de données semble vide ou bloquée, cliquez sur l'icône <strong>⚙️ (Paramètres)</strong> en bas du menu de gauche, puis cliquez sur le bouton rouge "Réinitialiser la base de données".</p>
+            </div>
+        </div>
+    </article>
+</main>
+
+<script>
+    window.onload = chargerIndex;
+</script>
+</body>
+</html>

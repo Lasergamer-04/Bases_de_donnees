@@ -1,0 +1,59 @@
+// 📚 TEMPLATE DE CONFIGURATION - SQL ACADEMY
+// Utilisez ces structures comme base pour vos nouveaux fichiers de configuration.
+
+// --- DANS config_app.js ---
+const APP_CONFIG = {
+    title: "Ma Nouvelle App SQL",
+    db_name: "ma_base_de_donnees",
+    page_details: "TEMPLATE_form.html",
+    menu: [
+        { label: "🏠 Accueil", url: "index.html" },
+        // Ajoutez vos liens ici
+    ]
+};
+
+// --- DANS config_queries.js ---
+const SQL_QUERIES = {
+    setup: { get_status: 'SELECT VALUE initialise FROM setup WHERE id = 1' },
+    /*
+    ma_table: {
+        list_all: "SELECT * FROM ma_table",
+        delete: "DELETE FROM ma_table WHERE id = ?",
+        get_one: "SELECT * FROM ma_table WHERE id = ?",
+        insert: "INSERT INTO ma_table (nom) VALUES (?)",
+        update: "UPDATE ma_table SET nom = ? WHERE id = ?"
+    }
+    */
+};
+
+// --- DANS config_pages.js ---
+const PAGES_CONFIG = {
+    // Exemple de structure pour une liste
+    /*
+    "ma_liste": {
+        title: "Ma Liste",
+        table_name: "ma_table",
+        query: SQL_QUERIES.ma_table.list_all,
+        delete_query: SQL_QUERIES.ma_table.delete,
+        form_page_url: "TEMPLATE_form.html"
+    },
+    */
+    
+    // Exemple de structure pour un formulaire
+    /*
+    "mon_formulaire": {
+        title: "Mon Formulaire",
+        table_name: "ma_table",
+        fields: [
+            {
+                name: "nom",
+                label: "Nom",
+                type: "text"
+            }
+        ],
+        query_get_one: SQL_QUERIES.ma_table.get_one,
+        query_insert: SQL_QUERIES.ma_table.insert,
+        query_update: SQL_QUERIES.ma_table.update
+    }
+    */
+};

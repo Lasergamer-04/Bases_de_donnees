@@ -1,0 +1,274 @@
+/* Global Styles */
+body {
+    display: grid;
+    grid-template-columns: 250px minmax(0, 1fr);
+    min-height: 100vh;
+    margin: 0;
+}
+
+aside {
+    border-right: 1px solid var(--pico-muted-border-color);
+    padding: 1rem;
+    background: var(--pico-card-background-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+main {
+    padding: 1rem;
+    overflow-x: hidden;
+}
+
+/* SQL Box Styling */
+.sql-box {
+    background: var(--pico-code-background-color);
+    color: var(--pico-code-color);
+    padding: 1.5rem;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 0.95rem;
+    border-radius: 8px;
+    border: 1px solid var(--pico-border-color);
+    border-left: 5px solid var(--pico-primary); /* Accent color */
+    margin-top: 0.5rem;
+    white-space: pre-wrap;
+    word-break: normal;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.sql-kw {
+    color: var(--pico-primary); /* Use primary color for keywords */
+    font-weight: bold;
+}
+
+.sql-separator {
+    border-top: 1px dashed var(--pico-primary);
+    margin: 1.5rem 0;
+}
+
+/* Table Headers */
+th {
+    text-transform: capitalize;
+}
+
+/* Index.html specific styles */
+.hero-banner {
+    background: var(--pico-primary-background);
+    color: var(--pico-primary-inverse);
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.hero-banner h1, .hero-banner p {
+    color: var(--pico-primary-inverse) !important;
+}
+.hero-banner p {
+    opacity: 0.9;
+    font-size: 1.2rem;
+}
+
+/* Tabs styling */
+[role="tablist"] {
+    display: flex;
+    gap: 0.5rem;
+    background: var(--pico-background-color);
+    padding: 0.5rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    overflow-x: auto;
+    border: 1px solid var(--pico-border-color);
+}
+[role="tab"] {
+    flex: 1;
+    text-align: center;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    transition: all 0.2s;
+    font-weight: 500;
+    white-space: nowrap;
+    color: var(--pico-secondary);
+}
+[role="tab"]:hover {
+    color: var(--pico-primary);
+}
+[role="tab"][aria-selected="true"] {
+    background: var(--pico-primary-background);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    color: var(--pico-primary-inverse);
+}
+
+/* Mission cards */
+.mission-card {
+    border: 1px solid var(--pico-border-color);
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    background: var(--pico-card-background-color);
+}
+.step {
+    border-left: 4px solid var(--pico-primary);
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+}
+.step-title {
+    font-weight: bold;
+    color: var(--pico-primary);
+    display: block;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+pre {
+    background: var(--pico-code-background-color);
+    color: var(--pico-code-color);
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    border: 1px solid var(--pico-border-color);
+    overflow-x: auto;
+}
+code {
+    font-weight: bold;
+    color: var(--pico-primary);
+}
+kbd {
+    background: var(--pico-code-background-color);
+    border: 1px solid var(--pico-border-color);
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-family: monospace;
+    color: var(--pico-code-color);
+}
+
+/* Badges */
+.badge {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+.badge-easy { background: var(--pico-success-background); color: var(--pico-success-inverse); }
+.badge-medium { background: var(--pico-warning-background); color: var(--pico-warning-inverse); }
+.badge-expert { background: var(--pico-danger-background); color: var(--pico-danger-inverse); }
+
+/* Chart.js container */
+.grid-charts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+.flex-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+canvas {
+    max-height: 250px;
+}
+footer hr {
+    margin-top: 3rem;
+}
+/* Parametres page styles */
+#tablesContainer details {
+    margin-bottom: 1rem;
+    border: 1px solid var(--pico-border-color);
+    border-radius: 8px;
+    padding: 0.5rem;
+}
+#tablesContainer summary {
+    cursor: pointer;
+    padding: 0.5rem;
+}
+#tablesContainer table {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+}
+/* Sidebar Styles */
+aside nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+aside nav ul li {
+    padding: 0;
+    margin-bottom: 0.25rem;
+}
+
+aside nav ul li strong {
+    font-size: 1.5rem;
+    color: var(--pico-primary);
+    display: block;
+    margin-bottom: 1.25rem;
+    border-bottom: 2px solid var(--pico-primary-background);
+    padding-bottom: 0.5rem;
+}
+
+aside nav ul li a {
+    display: block;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    color: var(--pico-secondary);
+}
+
+aside nav ul li a:hover {
+    background-color: var(--pico-primary-hover-background);
+    color: var(--pico-primary-inverse);
+    text-decoration: none;
+    transform: translateX(4px);
+}
+
+aside nav ul li a.active {
+    background-color: var(--pico-primary-background);
+    color: var(--pico-primary-inverse);
+    font-weight: 600;
+}
+
+.sidebar-footer {
+    opacity: 0.8;
+    font-size: 0.75rem;
+    border-top: 1px solid var(--pico-muted-border-color);
+    padding-top: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.settings-link {
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+/* JSON cells in tables */
+.json-cell {
+    margin: 0;
+    font-size: 0.8rem;
+    padding: 0.5rem;
+    background: var(--pico-code-background-color);
+    border: 1px solid var(--pico-border-color);
+    white-space: pre-wrap;
+    max-width: 400px;
+    max-height: 200px;
+    overflow: auto;
+}
+
+.mission-step{
+    border:  1px solid var(--pico-muted-border-color);
+    padding: 0.5rem;
+    border-radius: 8px;
+    background: var(--pico-code-background-color);
+}
